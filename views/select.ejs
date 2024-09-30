@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách người dùng</title>
+</head>
+<body>
+    <h1>Danh sách người dùng</h1>
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Short text</th>
+                <th>Long text</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody> -->
+            <!-- <% for (const user of user_regis) { %>
+                <tr>
+                    <td><%= user.Name %></td>
+                    <td><%= user.Email %></td>
+                    <td><%= user.Date %></td>
+                    <td><%= user.Title %></td>
+                    <!-- Sử dụng cú pháp ngoặc vuông cho các thuộc tính có dấu gạch ngang -->
+                    <!-- <td><%= user['shorttext'] %></td> 
+                    <td><%= user['longtext'] %></td> 
+                    <td><a href="/update/<%= user._id %>">Update</a></td>
+                    <td><a href="/delete/<%= user._id %>">Delete</a></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <a href="/">New user</a>
+</body>
+</html> --> -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách Tin tức</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 90%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        td {
+            color: #555;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .action-buttons a {
+            margin: 0 5px;
+            color: #e74c3c;
+        }
+        .action-buttons a.update {
+            color: #2ecc71;
+        }
+        a.new-article {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            width: 150px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        a.new-article:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách Tin tức</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên tác giả</th>
+                <th>Email</th>
+                <th>Ngày đăng</th>
+                <th>Tiêu đề</th>
+                <th>Mô tả ngắn</th>
+                <th>Nội dung</th>
+                <th>Cập nhật</th>
+                <th>Xóa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const user of user_regis) { %>
+                <tr>
+                    <td><%= user.Name %></td>
+                    <td><%= user.Email %></td>
+                    <td><%= user.Date %></td>
+                    <td><%= user.Title %></td>
+                    
+                    <td><%= user['shorttext'] %></td> 
+                    <td><%= user['longtext'] %></td> 
+                    <td class="action-buttons"><a href="/update/<%= user._id %>">Update</a></td>
+                    <td class="action-buttons"><a href="/delete/<%= user._id %>">Delete</a></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <a href="/" class="new-article">Thêm tin tức</a>
+</body>
+</html>
